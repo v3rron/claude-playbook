@@ -1,0 +1,10 @@
+{
+  "name": "playbook",
+  "version": "1.0.0",
+  "description": "An opinionated Claude Code workflow: investigate, build, verify, ship, close, learn.",
+  "author": { "name": "Ronen Verdi", "url": "https://github.com/v3rron" },
+  "homepage": "https://github.com/v3rron/claude-playbook",
+  "repository": "https://github.com/v3rron/claude-playbook",
+  "license": "MIT",
+  "keywords": ["skills", "workflow", "hooks", "best-practices"]
+}

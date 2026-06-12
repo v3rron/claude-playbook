@@ -1,0 +1,12 @@
+{
+  "name": "claude-playbook",
+  "owner": { "name": "Ronen Verdi", "url": "https://github.com/v3rron" },
+  "plugins": [
+    {
+      "name": "playbook",
+      "source": ".",
+      "description": "An opinionated Claude Code workflow.",
+      "version": "1.0.0"
+    }
+  ]
+}
