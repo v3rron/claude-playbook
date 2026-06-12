@@ -1,6 +1,8 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file guides Claude Code when **contributing to this repository**. Note: a
+plugin's root `CLAUDE.md` is *not* loaded as runtime context for people who
+install the plugin — it guides contributors here, not consumers of the plugin.
 
 ## What this repo is
 
@@ -39,15 +41,11 @@ Three top-level pieces, wired together by `hooks/hooks.json`:
      `hookSpecificOutput.additionalContext`. This is the **self-activation
      mechanism**: every session boots with the playbook's table-of-contents in
      context, so Claude knows which skill maps to which stage of the workflow.
-   - `prompt-dangerous-commands.sh` (PreToolUse: `Bash`) is a **safety gate**.
-     It parses the proposed command, strips leading `VAR=val` assignments and
-     anything after shell operators to find the base command, and matches it
-     against a denylist (`rm`, `git push`/`reset --hard`/`clean`/`rebase`/
-     `merge`/`cherry-pick`, `brew`, package publishes). On a match it returns
-     `permissionDecision: "ask"` to force a confirmation prompt even in
-     auto-accept modes; otherwise it `exit 0`s (the idiomatic "allow/defer"
-     signal — bare exit, no JSON). It also re-scans the full command for the
-     same patterns embedded after `&&`/`||`/`;`/`|`.
+   - `prompt-dangerous-commands.sh` (PreToolUse: `Bash`) is a **safety gate**: it
+     forces a confirmation prompt (`permissionDecision: "ask"`) before destructive
+     commands even in auto-accept modes, and `exit 0`s otherwise. The exact
+     denylist and command-parsing live in the script (its `case` statement) —
+     read it there rather than duplicating the logic here.
 
 3. **`skills/`** — one directory per skill, each with a `SKILL.md` carrying
    YAML frontmatter (`name`, `description`). Skills are organized around a single
@@ -58,11 +56,13 @@ Three top-level pieces, wired together by `hooks/hooks.json`:
 
 ## Conventions specific to this repo
 
-- **Skills here are sanitized public exports**, not the source of truth. They
-  originate in a private source repo and are published here via a sanitizing
-  export step that strips personal/company/project-specific content. When
-  editing or adding a skill, keep it **portable and public**: no
-  internal hostnames, employer names, private paths, or personal workflow
+- **Skills here are sanitized public exports, not the source of truth.** They
+  originate in a private source repo and are published via a sanitizing export
+  step. **Do not hand-edit a `SKILL.md` here to change behavior** — the next
+  export overwrites it. Fix it in the source repo and re-run the export. Edits
+  made *only* here are lost.
+- When a skill *does* legitimately change here, keep it **portable and public**:
+  no internal hostnames, employer names, private paths, or personal workflow
   assumptions. Content that only makes sense for one person's machine does not
   belong here.
 - The `using-playbook` skill is **load-bearing**: it is the text the
