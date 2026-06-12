@@ -1,5 +1,6 @@
 {
   "name": "claude-playbook",
+  "description": "An opinionated Claude Code workflow: investigate, build, verify, ship, close, learn.",
   "owner": { "name": "Ronen Verdi", "url": "https://github.com/v3rron" },
   "plugins": [
     {
