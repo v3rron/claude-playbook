@@ -27,8 +27,15 @@ before running.
 
 - **Safety hook** — `prompt-dangerous-commands`: confirmation gate for
   destructive bash commands.
-- **Workflow skills** — added over time; see `using-playbook` for the current
-  set and when to use each.
+- **Workflow skills**, one per stage of the arc (invoke as `/playbook:<name>`):
+  - **investigate** — `spike` (time-boxed research), `review-prd` (collaborative doc review)
+  - **build** — `arch-solid` (SOLID & composition guidance)
+  - **verify** — `guard` (secret/safety scan), `test` (targeted test runner), `review` (diff review)
+  - **ship** — `pr` (open a PR, loop until CI green & threads resolved)
+  - **close** — `wrapup` (session closeout), `handoff` (context handoff)
+  - **learn** — `improve` (retrospective), `mem` (knowledge base), `dream` (memory/config GC)
+
+  See `using-playbook` for when to reach for each.
 
 ## Requirements
 

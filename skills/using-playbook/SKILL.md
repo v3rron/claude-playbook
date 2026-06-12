@@ -16,12 +16,14 @@ investigate → build → verify → ship → close → learn
 
 | Stage | Reach for | When |
 |-------|-----------|------|
-| investigate | (skills added via export) | Scoping a change, researching unknowns |
-| build | (skills added via export) | Writing the implementation |
-| verify | (skills added via export) | Before committing — safety, tests, review |
-| ship | (skills added via export) | Opening and landing a PR |
-| close | (skills added via export) | Wrapping up a session, handing off |
-| learn | (skills added via export) | Capturing what was learned |
+| investigate | `spike`, `review-prd` | Time-boxed research; reviewing a PRD/design doc before building |
+| build | `arch-solid` | Writing code — SOLID principles, composition, clean module boundaries |
+| verify | `guard`, `test`, `review` | Before committing — secret/safety scan, run the right tests, review the diff |
+| ship | `pr` | Open a PR and loop until CI is green and review threads are resolved |
+| close | `wrapup`, `handoff` | Session closeout checklist; hand context to the next agent/session |
+| learn | `improve`, `mem`, `dream` | Capture learnings; manage the knowledge base; GC stale memory/config |
+
+Invoke a skill as `/playbook:<name>` (e.g. `/playbook:spike`).
 
 ## Always-On Safety
 
