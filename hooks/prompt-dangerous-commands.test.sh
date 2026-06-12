@@ -6,9 +6,11 @@ fail=0
 
 assert_decision() {
   local desc="$1" cmd="$2" want="$3"
-  local got
-  got=$(printf '{"tool_input":{"command":%s}}' "$(jq -Rn --arg c "$cmd" '$c')" \
-        | "$HOOK" | jq -r '.hookSpecificOutput.permissionDecision // "allow"')
+  local out got
+  # An empty/no-output response is the idiomatic "allow" (defer) signal.
+  out=$(printf '{"tool_input":{"command":%s}}' "$(jq -Rn --arg c "$cmd" '$c')" | "$HOOK")
+  got=$(printf '%s' "$out" | jq -r '.hookSpecificOutput.permissionDecision // "allow"' 2>/dev/null)
+  [ -z "$got" ] && got="allow"
   if [ "$got" = "$want" ]; then
     echo "ok   - $desc ($got)"
   else

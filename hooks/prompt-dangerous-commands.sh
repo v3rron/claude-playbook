@@ -38,7 +38,6 @@ case "$BASE_CMD" in
     elif echo "$COMMAND" | grep -qE '(^|[;&|]\s*)([A-Za-z_][A-Za-z0-9_]*=[^ ]+ +)*git\s+(commit|push|reset\s+--hard|clean|rebase|merge|cherry-pick)'; then
       REASON="Embedded dangerous git command detected"
     else
-      echo '{}'
       exit 0
     fi
     ;;
