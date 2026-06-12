@@ -59,9 +59,9 @@ Three top-level pieces, wired together by `hooks/hooks.json`:
 ## Conventions specific to this repo
 
 - **Skills here are sanitized public exports**, not the source of truth. They
-  originate in the maintainer's private `dots` repo and are published here via
-  the `export-to-starter` skill, which strips personal/company/project-specific
-  content. When editing or adding a skill, keep it **portable and public**: no
+  originate in a private source repo and are published here via a sanitizing
+  export step that strips personal/company/project-specific content. When
+  editing or adding a skill, keep it **portable and public**: no
   internal hostnames, employer names, private paths, or personal workflow
   assumptions. Content that only makes sense for one person's machine does not
   belong here.
