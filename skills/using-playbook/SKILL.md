@@ -18,7 +18,7 @@ investigate → build → verify → ship → close → learn
 |-------|-----------|------|
 | investigate | `spike`, `review-prd` | Time-boxed research; reviewing a PRD/design doc before building |
 | build | `arch-solid` | Writing code — SOLID principles, composition, clean module boundaries |
-| verify | `guard`, `test`, `review` | Before committing — secret/safety scan, run the right tests, review the diff |
+| verify | `guard`, `test`, `self-review` | Before committing — secret/safety scan, run the right tests, review the diff |
 | ship | `pr` | Open a PR and loop until CI is green and review threads are resolved |
 | close | `wrapup`, `handoff` | Session closeout checklist; hand context to the next agent/session |
 | learn | `improve`, `mem`, `dream` | Capture learnings; manage the knowledge base; GC stale memory/config |

@@ -7,7 +7,7 @@
       "name": "playbook",
       "source": ".",
       "description": "An opinionated Claude Code workflow.",
-      "version": "1.0.0"
+      "version": "2.0.0"
     }
   ]
 }

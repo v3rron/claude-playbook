@@ -30,7 +30,7 @@ before running.
 - **Workflow skills**, one per stage of the arc (invoke as `/playbook:<name>`):
   - **investigate** — `spike` (time-boxed research), `review-prd` (collaborative doc review)
   - **build** — `arch-solid` (SOLID & composition guidance)
-  - **verify** — `guard` (secret/safety scan), `test` (targeted test runner), `review` (diff review)
+  - **verify** — `guard` (secret/safety scan), `test` (targeted test runner), `self-review` (review your own diff)
   - **ship** — `pr` (open a PR, loop until CI green & threads resolved)
   - **close** — `wrapup` (session closeout), `handoff` (context handoff)
   - **learn** — `improve` (retrospective), `mem` (knowledge base), `dream` (memory/config GC)

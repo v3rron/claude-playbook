@@ -29,7 +29,7 @@ Run `/improve` at the end of any session where:
 ### Step 1: Identify Skills Used
 
 Scan the full conversation for:
-- Explicit skill invocations (`/review`, `/test`, `/pr`, etc.)
+- Explicit skill invocations (`/self-review`, `/test`, `/pr`, etc.)
 - CLAUDE.md or AGENTS.md instructions that were followed or should have been followed
 - Recurring manual steps that could be codified into a skill
 

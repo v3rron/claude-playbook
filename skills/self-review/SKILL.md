@@ -1,9 +1,9 @@
 ---
-name: review
-description: Code review for current branch changes across security, architecture, and clarity dimensions. Use for reviewing PR changes, code review, or getting feedback on branch changes.
+name: self-review
+description: Self-review of your own branch before you push, across security, architecture, and clarity. Use for getting feedback on your current branch changes. Not for reviewing a colleague's PR — use /code-review for that.
 ---
 
-# Code Review
+# Self-Review
 
 Run a comprehensive code review (security, architecture, clarity) against your current changes.
 
